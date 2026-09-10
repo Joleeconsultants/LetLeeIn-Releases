@@ -8,13 +8,13 @@ Use the [latest published release](https://github.com/Joleeconsultants/LetLeeIn-
 
 Releases are published only by the private repository's GitHub Action. It builds and verifies the artifacts, signs Windows binaries, generates checksums after signing, and publishes the approved assets here. Legacy `agent-v0.1.0` predates signing enforcement and must not be represented as a signed release.
 
-## Optional microphone forwarding component
+## Included microphone forwarding component
 
-LetLeeIn 0.6.1 adds native setup support for the optional **base VB-CABLE** virtual audio component by VB-Audio. It is proprietary donationware, not open source. Installing or upgrading LetLeeIn does not automatically install VB-CABLE, and capturing PC sound does not require it.
+LetLeeIn 0.6.1 includes the **base VB-CABLE** virtual audio component by VB-Audio. It is proprietary donationware, not open source. Installing or upgrading LetLeeIn includes the unchanged vendor package and prepares the component automatically. Capturing PC sound does not require it.
 
-A compatible Jolee Remote viewer provides an explicit **Setup** action in the microphone/audio panel. Setup runs through the existing Windows service, preserves audio defaults and configured endpoint pairs, reuses a compatible installed component, and reports conflicts rather than replacing an unknown installation. It requires Windows 10 build 16299 or later on x64. A restart may be required; LetLeeIn does not restart the PC automatically.
+There is no separate Setup button. Headless preparation runs through the existing Windows service after successful agent installation, preserves audio defaults and configured endpoint pairs, reuses a compatible installed component, and reports conflicts rather than replacing an unknown installation. It requires Windows 10 build 16299 or later on x64. A restart may be required; LetLeeIn does not restart the PC automatically. If there is no single active logged-in user, preparation waits automatically so that user audio defaults can be protected.
 
-After the remote PC confirms readiness, enable microphone forwarding separately and allow browser microphone access. Select **CABLE Output** as the microphone in the destination Windows application when needed. Setup never automatically starts capture. The native component requests a Windows notification when received audio first starts forwarding; notification settings may suppress it. The matching viewer/controller integration and live-device acceptance are tracked separately from the native release.
+After the remote PC confirms readiness, press the existing microphone button and allow browser microphone access. Select **CABLE Output** as the microphone in the destination Windows application when needed. Installation never automatically starts capture. The native component requests a Windows notification when received audio first starts forwarding; notification settings may suppress it. The matching viewer/controller integration and live-device acceptance are tracked separately from the native release.
 
 The origin of VB-CABLE: <https://www.vb-cable.com/>.
 
