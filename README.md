@@ -27,4 +27,3 @@ Professional deployments where employees cannot see VB-CABLE and pay require vol
 ## Enrollment
 
 Release assets never contain customer identifiers, device credentials, enrollment codes, logs, command results, or private source code. Client enrollment is generated separately through the Cloudflare Access-protected LetLeeIn portal.
-
