@@ -10,11 +10,11 @@ Releases are published only by the private repository's GitHub Action. It builds
 
 ## Included microphone forwarding component
 
-LetLeeIn 0.6.1 includes the **base VB-CABLE** virtual audio component by VB-Audio. It is proprietary donationware, not open source. Installing or upgrading LetLeeIn includes the unchanged vendor package and prepares the component automatically. Capturing PC sound does not require it.
+LetLeeIn 0.6.2 includes the **base VB-CABLE** virtual audio component by VB-Audio. It is proprietary donationware, not open source. Installing or upgrading LetLeeIn includes the unchanged vendor package and prepares the component automatically. Capturing PC sound does not require it.
 
 There is no separate Setup button. Headless preparation runs through the existing Windows service after successful agent installation, preserves audio defaults and configured endpoint pairs, reuses a compatible installed component, and reports conflicts rather than replacing an unknown installation. It requires Windows 10 build 16299 or later on x64. A restart may be required; LetLeeIn does not restart the PC automatically. If there is no single active logged-in user, preparation waits automatically so that user audio defaults can be protected.
 
-After the remote PC confirms readiness, press the existing microphone button and allow browser microphone access. Select **CABLE Output** as the microphone in the destination Windows application when needed. Installation never automatically starts capture. The native component requests a Windows notification when received audio first starts forwarding; notification settings may suppress it. The matching viewer/controller integration and live-device acceptance are tracked separately from the native release.
+After the remote PC confirms readiness, press the existing microphone button and allow browser microphone access. Select **CABLE Output** as the microphone in the destination Windows application when needed. Installation never automatically starts capture. The first microphone activation per remote session opens an explanation. Select **Don't show this again** and press OK to remember that choice for the current Windows user. Closing or acknowledging without selecting it keeps notices enabled for future sessions. A tray indicator follows microphone forwarding independently of the preference; Windows may place it in tray overflow. Reconnects and repeated toggles do not repeat the notice in the same session. The matching viewer/controller integration and live-device acceptance are tracked separately from the native release.
 
 The origin of VB-CABLE: <https://www.vb-cable.com/>.
 
