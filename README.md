@@ -8,6 +8,14 @@ Use the [latest published release](https://github.com/Joleeconsultants/LetLeeIn-
 
 Releases are published only by the private repository's GitHub Action. It builds and verifies the artifacts, signs Windows binaries, generates checksums after signing, and publishes the approved assets here. Legacy `agent-v0.1.0` predates signing enforcement and must not be represented as a signed release.
 
+## Parked beta features
+
+Microphone forwarding and remote printing are independent beta features, disabled by default. They are enabled only for individual devices on explicit request; there is no user-facing switch to enable either feature. Disabled features are hidden in compatible remote viewers. Start a new remote session after a device flag changes.
+
+**Driver and printer installation gates require agent 0.6.5 or later.** Older agents, including 0.6.4, do not enforce these gates and must be upgraded. Check the version of the downloaded release before relying on this behavior.
+
+With the corresponding flag off, LetLeeIn does not install the VB-CABLE driver or create the Jolee Remote Print queue. Previously installed components remain installed. Ordinary PC-sound capture through an existing audio device remains available; automatically preparing VB-CABLE on a PC without an audio device requires the microphone flag.
+
 ## Included microphone forwarding component
 
 From LetLeeIn 0.6.5, microphone forwarding is a parked beta feature, off by default. An administrator must explicitly enable its saved flag for the individual device; there is no enablement UI. The installer includes the unchanged **base VB-CABLE** package by VB-Audio, but the service does not install its driver while the flag is off. It is proprietary donationware, not open source. Capturing PC sound through an existing audio device does not require it.
@@ -33,8 +41,6 @@ Professional deployments where employees cannot see VB-CABLE and pay require vol
 ## Remote printing
 
 From 0.6.5, printing is an independent parked beta feature, off by default, with no enablement UI. Only when its saved device flag is enabled does LetLeeIn prepare a persistent **Jolee Remote Print** queue using the Windows Microsoft Print to PDF driver. Forwarding is available only during an authorized remote session. The queue stays installed between sessions, with forwarding disabled. Existing default printers are preserved when known; conflicting queues are reported instead of overwritten.
-
-Existing audio components and printer queues are retained when a feature is parked; they are not automatically uninstalled. New web sessions use the current saved flags. Agent 0.6.5 or later is required for driver/printer installation gating; older agents must be upgraded for that behavior.
 
 ## Enrollment
 
