@@ -10,9 +10,9 @@ Releases are published only by the private repository's GitHub Action. It builds
 
 ## Included microphone forwarding component
 
-LetLeeIn 0.6.4 includes the **base VB-CABLE** virtual audio component by VB-Audio. It is proprietary donationware, not open source. Installing or upgrading LetLeeIn includes the unchanged vendor package and prepares the component automatically. Capturing PC sound does not require it.
+From LetLeeIn 0.6.5, microphone forwarding is a parked beta feature, off by default. An administrator must explicitly enable its saved flag for the individual device; there is no enablement UI. The installer includes the unchanged **base VB-CABLE** package by VB-Audio, but the service does not install its driver while the flag is off. It is proprietary donationware, not open source. Capturing PC sound through an existing audio device does not require it.
 
-There is no separate Setup button. Headless preparation runs through the existing Windows service after successful agent installation, preserves audio defaults and configured endpoint pairs, reuses a compatible installed component, and reports conflicts rather than replacing an unknown installation. It requires Windows 10 build 16299 or later on x64. A restart may be required; LetLeeIn does not restart the PC automatically. If there is no single active logged-in user, preparation waits automatically so that user audio defaults can be protected.
+For opted-in devices, there is no separate Setup button. Headless preparation runs through the existing Windows service after successful agent installation, preserves audio defaults and configured endpoint pairs, reuses a compatible installed component, and reports conflicts rather than replacing an unknown installation. It requires Windows 10 build 16299 or later on x64. A restart may be required; LetLeeIn does not restart the PC automatically. If there is no single active logged-in user, preparation waits automatically so that user audio defaults can be protected.
 
 After the remote PC confirms readiness, press the existing microphone button and allow browser microphone access. Select **CABLE Output** as the microphone in the destination Windows application when needed. Installation never automatically starts capture. The first use of VB-CABLE for PC sound or the first microphone activation opens one shared explanation, whichever happens first. It is automatically remembered for that Windows user, with no checkbox and no repeat in later sessions. The corrected 0.6.4 notice includes the vendor origin, donationware statement, payment link and licensing link. Users who saw an earlier incomplete notice see this corrected notice once. A tray indicator follows microphone forwarding; Windows may place it in tray overflow. Installation alone and PC sound captured from a physical audio endpoint do not trigger the notice.
 
@@ -32,7 +32,9 @@ Professional deployments where employees cannot see VB-CABLE and pay require vol
 
 ## Remote printing
 
-LetLeeIn prepares a persistent **Jolee Remote Print** queue using the Windows Microsoft Print to PDF driver. Forwarding is available only during an authorized remote session. The queue stays installed between sessions, with forwarding disabled. Existing default printers are preserved when known; conflicting queues are reported instead of overwritten.
+From 0.6.5, printing is an independent parked beta feature, off by default, with no enablement UI. Only when its saved device flag is enabled does LetLeeIn prepare a persistent **Jolee Remote Print** queue using the Windows Microsoft Print to PDF driver. Forwarding is available only during an authorized remote session. The queue stays installed between sessions, with forwarding disabled. Existing default printers are preserved when known; conflicting queues are reported instead of overwritten.
+
+Existing audio components and printer queues are retained when a feature is parked; they are not automatically uninstalled. New web sessions use the current saved flags. Agent 0.6.5 or later is required for driver/printer installation gating; older agents must be upgraded for that behavior.
 
 ## Enrollment
 
